@@ -20,9 +20,13 @@ The 'mirror' process performed the following after the PDS was created:
 Automated:
   1. Copied the original PDS into a PDS using the Git HLQ
   2. The @FILEnnn, or @FILnnnnn, members were copied into a
-       readme.text dataset (see below under Manual for more on this)
+     README.md OMVS file.
+     - if the file is not found then the information if copied from
+       the CBT File 001 section describing the file.
   3. Any members with PDF, PPT, ZIP, DOCX, etc. were copied into
-     individual datasets (see below under Manual for more on this)
+     individual datasets. Some will be moved to an OMVS file with
+     a more meaningful file name based on a CBT File specific
+     converstion control data.
   4. Any members in XMIT format were processed using TSO RECEIVE into
      datasets under the Git HLQ, using the member name as a qualifier.
   5. Any members with (4) in XMIT format were also processed using TSO
@@ -38,9 +42,9 @@ Manual (using ZIGI):
   3. The ZIGI repository is updated with the GitHub SSH Git URL (1)
 
 Manual (under OMVS):
-  1. The readme dataset was renamed to README.md for use by Git
-  2. PDF, PPT, ZIP, etc. were renamed to more meaningful file names with
-     an appropriate suffix in lower case
+  1. PDF, PPT, ZIP, etc. were renamed to more meaningful file names with
+     an appropriate suffix in lower case.
+     - unless this was automated using a CBT File specific control file
 
 Manual (using ZIGI):
   1. ZIGI now performs the Git Add, Commit, and Push to the GitHub
@@ -69,7 +73,6 @@ adjustments.
 </details>
 
 ## CBT File Information
-
 ```
 
 --------------------------------------------------------------------------------
