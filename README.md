@@ -60,6 +60,12 @@ z/OS OMVS port of Git provided by Rocket software.
 **Note:** If you performed a git clone from OMVS without using ZIGI then
 you can use the zginstall.rex to 'upload' the files to z/OS, creating
 the z/OS datasets. See zginstall.readme for more information on it.
+
+When using the zginstall.rex tool the last thing it does is inform the
+user of a z/OS REXX to invoke to add the ISPF statistics to the z/OS
+partitioned dataset members. This is something that ZIGI does
+automatically.
+
 ```
 
 ### Installation Information
@@ -73,6 +79,7 @@ adjustments.
 </details>
 
 ## CBT File Information
+
 ```
 
 --------------------------------------------------------------------------------
